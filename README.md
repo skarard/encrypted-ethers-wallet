@@ -1,8 +1,11 @@
 # Encrypted Ethers Wallet
 
-[![NPM version](https://img.shields.io/npm/v/encrypted-ethers-wallet.svg)](https://www.npmjs.com/package/encrypted-ethers-wallet)
+![NPM version](https://img.shields.io/npm/v/encrypted-ethers-wallet.svg)
+![NPM license](https://img.shields.io/npm/l/encrypted-ethers-wallet)
+![GitHub top language](https://img.shields.io/github/languages/top/skarard/encrypted-ethers-wallet)
+![Coincap (Price USD)](https://img.shields.io/coincap/price-usd/ethereum)
 
-Encrypted Ethers Wallet is a package for creating a password encrypted JSON wallet using [Ethers](https://github.com/ethers-io/ethers.js). It supports any EVM-based network and can be installed globally to easily interact with command line interactions, particularly contract deployment script, such as hardhat, but any EVM blockchain automation is supported.
+Encrypted Ethers Wallet is a package for creating a password encrypted JSON wallet using [Ethers](https://github.com/ethers-io/ethers.js). It supports any EVM-based network and can be installed globally to easily interact with command line interactions, particularly contract deployment scripts, such as hardhat, but any EVM blockchain automation is supported.
 
 ## Installation
 
