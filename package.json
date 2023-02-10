@@ -1,7 +1,7 @@
 {
   "name": "encrypted-ethers-wallet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Encrypted Ethers Wallet is a package for creating a password encrypted JSON wallet using Ethers. It supports any EVM-based network and can be installed globally to easily interact with command line interactions, particularly contract deployment, but any EVM blockchain automation is supported.",
   "main": "dist/index.js",
   "bin": {
     "encrypted-ethers-wallet": "./bin/encrypted-ethers-wallet"
