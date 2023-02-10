@@ -1,0 +1,32 @@
+{
+  "name": "encrypted-ethers-wallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "encrypted-ethers-wallet": "./bin/encrypted-ethers-wallet"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skarard/encrypted-ethers-wallet.git"
+  },
+  "keywords": [],
+  "author": "skarard <skarard@gmail.com> (https://skarard.xyz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skarard/encrypted-ethers-wallet/issues"
+  },
+  "homepage": "https://github.com/skarard/encrypted-ethers-wallet#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "ethers": "^6.0.2"
+  }
+}
