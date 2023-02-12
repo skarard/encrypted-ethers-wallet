@@ -5,7 +5,8 @@
     "moduleResolution": "node16",
     "sourceMap": true,
     "outDir": "./dist/",
-    "sourceRoot": "./src"
+    "sourceRoot": "./src",
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -32,7 +32,7 @@ const createEncryptWriteWallet = async (password: string) => {
   return { address: wallet.address, filename };
 };
 
-const main = async () => {
+export const main = async () => {
   console.log("******************************");
   console.log("* Create an encrypted wallet *");
   console.log("******************************");
