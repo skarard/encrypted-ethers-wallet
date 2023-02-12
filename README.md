@@ -50,6 +50,12 @@ rl.question('Please enter your wallet password: ', (password) => {
 });
 ```
 
+## Testing
+To run the tests for this project, use the command:
+```
+npm run test
+``` 
+
 ## Contributing
 
 If you'd like to contribute to the development of Encrypted Ethers Wallet, please feel free to submit pull requests or open issues on the [GitHub repo](https://github.com/skarard/encrypted-ethers-wallet).
