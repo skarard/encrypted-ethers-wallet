@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-require("../dist/index");
+const encryptedEthersWallet = require("../dist/index");
+encryptedEthersWallet.write();
