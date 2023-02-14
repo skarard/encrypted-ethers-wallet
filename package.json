@@ -9,6 +9,8 @@
   },
   "preferGlobal": true,
   "scripts": {
+    "write": "ts-node ./src/cli.ts -w",
+    "read": "ts-node ./src/cli.ts -r",
     "build": "tsc -p .",
     "test": "hardhat test"
   },
