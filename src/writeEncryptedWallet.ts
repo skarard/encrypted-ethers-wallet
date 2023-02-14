@@ -1,21 +1,6 @@
 import { Wallet } from "ethers";
-import { createInterface } from "node:readline";
-import { Writable } from "node:stream";
-import { writeFileSync } from "node:fs";
-
-var mutableStdout = new Writable({
-  write: function (chunk, encoding, callback) {
-    if (chunk.toString() === rl.getPrompt())
-      process.stdout.write(chunk, encoding);
-    callback();
-  },
-});
-
-const rl = createInterface({
-  input: process.stdin,
-  output: mutableStdout,
-  terminal: true,
-});
+import { writeFile } from "node:fs/promises";
+import { rl } from "./";
 
 const question = (query: string) =>
   new Promise((resolve: (value: string) => void) =>
@@ -27,7 +12,7 @@ const createEncryptWriteWallet = async (password: string) => {
   const encryptedWallet = JSON.parse(await wallet.encrypt(password));
 
   const filename = encryptedWallet["x-ethers"].gethFilename + ".json";
-  writeFileSync(filename, JSON.stringify(encryptedWallet));
+  await writeFile(filename, JSON.stringify(encryptedWallet));
 
   return { address: wallet.address, filename };
 };
@@ -40,6 +25,7 @@ const write = async () => {
   process.stdout.write("\n");
   const confirmedPassword = await question("Confirm password: ");
   process.stdout.write("\n");
+  rl.close();
 
   if (password.length < 6 || password !== confirmedPassword)
     throw Error(
@@ -55,8 +41,6 @@ const write = async () => {
 
   console.log("Wallet Address:", address);
   console.log("Encrypted Wallet Filename:", filename);
-
-  rl.close();
 };
 
 export default write;
