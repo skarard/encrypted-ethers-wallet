@@ -1,11 +1,6 @@
 import { Wallet } from "ethers";
 import { writeFile } from "node:fs/promises";
-import { rl } from "./";
-
-const question = (query: string) =>
-  new Promise((resolve: (value: string) => void) =>
-    rl.question(query, resolve)
-  );
+import { rl, question } from "./";
 
 const createEncryptWriteWallet = async (password: string) => {
   const wallet = Wallet.createRandom();
@@ -21,10 +16,8 @@ const write = async () => {
   console.log("*****************************");
   console.log("* Write an encrypted wallet *");
   console.log("*****************************");
-  const password = await question("Enter password: ");
-  process.stdout.write("\n");
-  const confirmedPassword = await question("Confirm password: ");
-  process.stdout.write("\n");
+  const password = await question("Enter password: ", true);
+  const confirmedPassword = await question("Confirm password: ", true);
   rl.close();
 
   if (password.length < 6 || password !== confirmedPassword)

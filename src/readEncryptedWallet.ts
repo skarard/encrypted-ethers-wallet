@@ -1,11 +1,6 @@
 import { Wallet } from "ethers";
 import { readFile } from "node:fs/promises";
-import { rl } from "./";
-
-const question = (query: string) =>
-  new Promise((resolve: (value: string) => void) =>
-    rl.question(query, resolve)
-  );
+import { rl, question } from "./";
 
 const readWallet = async (path: string, password: string) => {
   const readBuffer = await readFile(path);
@@ -17,9 +12,7 @@ const read = async () => {
   console.log("* Read an encrypted wallet *");
   console.log("****************************");
   const path = await question("Path to encrypted json: ");
-  process.stdout.write("\n");
-  const password = await question("Enter password: ");
-  process.stdout.write("\n");
+  const password = await question("Enter password: ", true);
   rl.close();
 
   process.stdout.write("Reading encrypted wallet... ");
